@@ -12,7 +12,6 @@ class LeafNode:
         self.size = size
         self.data = data
 
-
 class DecisionNode:
     def __init__(self, left, right, splitAtt, splitVal, feattype):
         self.left = left
@@ -21,4 +20,3 @@ class DecisionNode:
         self.splitVal = splitVal
         self.feattype = feattype
         self.path_length = np.nan
-
