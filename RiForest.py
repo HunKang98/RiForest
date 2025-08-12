@@ -125,7 +125,7 @@ class RiTree:
         return self.root
 
 class RiForest:
-    def __init__(self, sample_size, bins, alpha, n_iter = 10, n_trees=100):
+    def __init__(self, sample_size, bins, alpha, n_iter=10, n_trees=100):
         self.sample_size = sample_size
         self.n_trees = n_trees
         self.bins = bins
@@ -185,10 +185,11 @@ class RiForest:
         if isinstance(X, pd.DataFrame):
             X = X.values
         avg_length = self.path_length(X)
-        scores = np.array([np.power(2, -l/c(self.sample_size))for l in avg_length])
+        scores = np.array([np.power(2, -l/c(self.sample_size)) for l in avg_length])
         return scores
 
     def predict(self, X:np.ndarray, threshold:float) -> np.ndarray:
         scores = self.anomaly_score(X)
         prediction = self.predict_from_anomaly_scores(scores, threshold)
         return prediction
+
