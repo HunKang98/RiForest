@@ -1,4 +1,3 @@
-
 import numpy as np
 import pandas as pd
 from scipy import io
@@ -25,4 +24,5 @@ end = time.time()
 
 print(roc_auc_score(data_label, anomaly_score))
 print(end-start)
+
     
